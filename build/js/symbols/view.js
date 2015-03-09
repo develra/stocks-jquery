@@ -2,10 +2,10 @@ function symbolView(symbol){
     
     console.log('symbol view: ', symbol)
 
-    $.get("http://dev.markitondemand.com/Api/v2/Quote?symbol=" + symbol,
+    $.get("https://enigmatic-basin-9438.herokuapp.com/quote/" + symbol,
         function(data) {
         $.get("/stocks-jquery/templates/symbolView.jade", function(template){ 
-        $("#details").html(jade.render(template, {item: data}))
+        $("#details").html(jade.render(template, {item: JSON.parse(data)}))
     })
 })
 }

@@ -1,7 +1,10 @@
 h5= item.Name
 h5= item.Symbol
 div= 'Last Price:' + item.LastPrice
-div= 'Change: $'+ item.Change
+if item.Change > 0
+    div.up= 'Change: $'+ item.Change
+else
+    div.down= 'Change: $' + item.Change
 div= 'Timestamp: '+ item.Timestamp
 div= 'Volume: ' +item.Volume
 div= 'High: '+item.High
