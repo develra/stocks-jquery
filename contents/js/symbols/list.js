@@ -1,8 +1,10 @@
 function symbolSearch(lookup){
        
-$.get("http://dev.markitondemand.com/Api/v2/Lookup/jsonp?input=" + lookup, function(symbols){
+$.get("https://enigmatic-basin-9438.herokuapp.com/symbol/" + lookup, function(symbols){
+ //   console.log(symbols.substring == true)
 $.get("/stocks-jquery/templates/symbolList.jade", function(template){
-      var html = jade.render(template, {items: symbols})
+      var html = jade.render(template, 
+      {items: (symbols.substring ? JSON.parse(symbols) : symbols)})
             $('#list').html(html)
         })
     })

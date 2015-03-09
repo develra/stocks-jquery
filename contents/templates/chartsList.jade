@@ -1,12 +1,12 @@
 link(href='css/custom.css', rel='stylesheet')
-h5 Search
+h5 Charts Search
 div.row
     div.eight.columns
         .form-group.form-group-default
             label Name
             input#text.form-control(type='text', required='')
     div.four.columns
-        button.btn.btn-primary(onClick='symbolSearch($("#text").val())') Search
+        button.btn.btn-primary(onClick='ChartsSearch($("#text").val())') Search
 div.row#example-grid
     div.four.columns
         b Name
@@ -17,7 +17,7 @@ div.row#example-grid
 each item in items
     div.row#example-grid
         div.four.columns
-            a(href="#", onClick='symbolView("' + item.Symbol + '")')
+            a(href="#", onClick='ChartsView("' + item.Symbol + '")')
                 = item.Name
         div.four.columns= item.Symbol
         div.four.columns= item.Exchange

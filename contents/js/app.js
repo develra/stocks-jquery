@@ -1,5 +1,5 @@
 $( "#symbols" ).on( "click", function( event ) {
-    symbolSearch("Netflix")
+    symbolSearch("Netflix");
 })
 
 $( "#charts" ).on( "click", function( event ) {
