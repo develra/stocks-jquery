@@ -1,7 +1,23 @@
 link(href='css/custom.css', rel='stylesheet')
+h5 Search
+div.row
+    div.eight.columns
+        .form-group.form-group-default
+            label Name
+            input#text.form-control(type='text', required='')
+    div.four.columns
+        button.btn.btn-primary(onClick='symbolSearch($("#text").val())') Search
+div.row#example-grid
+    div.four.columns
+        b Name
+    div.four.columns
+        b Symbol
+    div.four.columns
+        b Exchange
 each item in items
-    div#example-grid
-        div.row
-            div.four.columns= item.Symbol
-            div.four.columns= item.Name
-            div.four.columns= item.Exchange
+    div.row#example-grid
+        div.four.columns
+            a(href="#", onClick='symbolView("' + item.Symbol + '")')
+                = item.Name
+        div.four.columns= item.Symbol
+        div.four.columns= item.Exchange

@@ -1,22 +1,11 @@
-function repoView(full_name){
+function symbolView(symbol){
+    
+    console.log('symbol view: ', symbol)
 
-    console.log('viewing repo: ', full_name)
-
-    // e.g., https://api.github.com/repos/ucdd2-sp15/nn-express
-
-    $.get("https://api.github.com/repos/" + full_name, github, function(data) {
-        
-        var repo = data
-        // console.log(repo)
-
-        $.get("/git-jquery/templates/repoView.jade", function(template) {
-
-            var html = jade.render(template, {item: repo})
-            
-            $("#details").html(html)
-
-        })
-
+    $.get("https://enigmatic-basin-9438.herokuapp.com/quote/" + symbol,
+        function(data) {
+        $.get("/stocks-jquery/templates/symbolView.jade", function(template){ 
+        $("#details").html(jade.render(template, {item: JSON.parse(data)}))
     })
-
+})
 }

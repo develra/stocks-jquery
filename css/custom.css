@@ -18,3 +18,13 @@ img {
 	border: 1px #aaa solid;
 	padding: 2px;
 }
+
+.down
+{
+    color: red
+}
+
+.up
+{
+    color: green
+}
